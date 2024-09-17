@@ -123,4 +123,10 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    'open_weather' => [
+        'key' => env('OPEN_WEATHER_API_KEY'),
+    ],
+    'nasa' => [
+        'key' => env('NASA_API_KEY'),
+    ],
 ];
