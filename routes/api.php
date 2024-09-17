@@ -31,3 +31,7 @@ Route::get('/', function (Request $request) {
         'rotation' => $rotationMultiplier
     ]);
 });
+
+Route::prefix('music')->group(function () {
+    Route::get('/ambiant', [\App\Http\Controllers\MusicController::class, 'ambiant']);
+});
