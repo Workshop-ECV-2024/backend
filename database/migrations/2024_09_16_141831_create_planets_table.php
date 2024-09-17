@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('planets', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('radius');
+            $table->string('mass');
+            $table->string('distance_from_sun');
+            $table->string('day_length');
+            $table->string('year_length');
+            $table->json('atmospheric_composition');
+            $table->integer('avg_temperature');
             $table->timestamps();
         });
     }
