@@ -35,3 +35,10 @@ Route::get('/', function (Request $request) {
 Route::prefix('music')->group(function () {
     Route::get('/ambiant', [\App\Http\Controllers\MusicController::class, 'ambiant']);
 });
+
+
+Route::get('/planet', function(Request $request) {
+    $planet = $request->get('name', 'Earth');
+
+    return \App\Models\Planet::where("name", $planet)->first();
+});

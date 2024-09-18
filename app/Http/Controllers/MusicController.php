@@ -46,13 +46,13 @@ class MusicController extends Controller
             ], 404);
         }
 
-        $weather = \App\Helpers\Weather::getWeather($city->latitude, $city->longitude);
+        // $weather = \App\Helpers\Weather::getWeather($city->latitude, $city->longitude);
 
-        $data['temperature'] = $weather->getTemperature();
-        $data['pressure'] = $weather->getPressure();
-        $data['humidity'] = $weather->getHumidity();
-        $data['wind_speed'] = $weather->getWindSpeed();
-        $data['cloudiness'] = $weather->getCloudiness();
+        // $data['temperature'] = $weather->getTemperature();
+        // $data['pressure'] = $weather->getPressure();
+        // $data['humidity'] = $weather->getHumidity();
+        // $data['wind_speed'] = $weather->getWindSpeed();
+        // $data['cloudiness'] = $weather->getCloudiness();
 
         return $data;
     }
