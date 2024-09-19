@@ -42,3 +42,18 @@ Route::get('/planet', function(Request $request) {
 
     return \App\Models\Planet::where("name", $planet)->first();
 });
+
+Route::get('/weather', function (Request $request) {
+    $latitude = $request->get('latitude', 48.8566);
+    $longitude = $request->get('longitude', 2.3522);
+
+    $weather = \App\Helpers\Weather::getWeather($latitude, $longitude);
+
+    return [
+        'temperature' => $weather->getTemperature(),
+        'pressure' => $weather->getPressure(),
+        'humidity' => $weather->getHumidity(),
+        'wind_speed' => $weather->getWindSpeed(),
+        'cloudiness' => $weather->getCloudiness()
+    ];
+});
